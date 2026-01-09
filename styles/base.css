@@ -1,0 +1,176 @@
+/* =========================
+   1. GLOBAL RESET & FONTS
+   ========================= */
+:root {
+  /* Color Schema based on the provided image (Dark Blue/Teal & White) */
+  --primary-color: #1a3c5a;   /* Dark Blue for header/footer */
+  --secondary-color: #2c567a; /* Lighter blue for accents */
+  --accent-color: #eee;       /* Light gray for backgrounds */
+  --text-color: #333;         /* Dark gray for main text */
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Matches your Google Fonts link */
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; /* Matches your Google Fonts link */
+}
+
+/* =========================
+   2. HEADER & NAVIGATION
+   ========================= */
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Requirement: "Make the span tag in the header to display as a block" */
+#course-title {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Requirement: "Use CSS Flex on the navigation nav" */
+nav {
+  background-color: #11283d; /* Slightly darker for contrast */
+}
+
+nav ul {
+  display: flex;                /* Flexbox enabled */
+  justify-content: center;      /* Center the links */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  flex: 1;                      /* Distribute space evenly */
+  max-width: 200px;             /* Prevent them from getting too wide */
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Requirement: "The navigation must employ a well designed hover effect" */
+nav a:hover {
+  background-color: var(--secondary-color);
+  color: #ffd700; /* Gold accent on hover */
+}
+
+/* =========================
+   3. MAIN LAYOUT (GRID)
+   ========================= */
+/* Requirement: "The main element has a limited width and is centered" */
+main {
+  max-width: 1000px;
+  margin: 2rem auto; /* Top/Bottom margin 2rem, Left/Right auto (centered) */
+  padding: 0 1rem;
+  
+  /* Requirement: "Layout the main column cards using CSS Grid" */
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column (mobile first) */
+  gap: 20px;
+}
+
+main h1 {
+  text-align: center;
+  /* Make the H1 span across all grid columns */
+  grid-column: 1 / -1; 
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Tablet/Desktop View */
+@media screen and (min-width: 768px) {
+  main {
+    /* Switch to two columns for larger screens */
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+/* =========================
+   4. CARD STYLING
+   ========================= */
+.card {
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures content doesn't spill out of rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling the headers inside the cards to look like the image provided */
+.card h2 {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* Styling the content inside the cards */
+.card p {
+  padding: 1rem;
+  text-align: justify;
+}
+
+.card img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 150px; /* Controls image size */
+  height: auto;
+  border: 4px solid var(--white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Special styling to float image right for larger screens (like the profile photo in example) */
+@media screen and (min-width: 600px) {
+  .card img {
+    float: right;
+    margin: 1rem;
+    max-width: 120px;
+  }
+}
+
+/* =========================
+   5. FOOTER
+   ========================= */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+#lastModified {
+  color: #ffeb3b; /* Yellow/Gold for the modification date to make it pop */
+  font-size: 0.8rem;
+}
