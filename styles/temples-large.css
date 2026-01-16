@@ -1,0 +1,29 @@
+/* Hide Hamburger Button */
+#menu {
+    display: none;
+}
+
+/* Reset Nav Positioning */
+nav {
+    position: static;
+    display: block; /* Always show menu on desktop */
+    width: auto;
+    background-color: transparent;
+}
+
+/* Make List Horizontal */
+.navigation {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation li a {
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+/* Gallery Grid - 3 Columns for Desktop */
+.gallery {
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 20px;
+}
