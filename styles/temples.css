@@ -1,42 +1,46 @@
-/* Base Styles & Mobile View */
 :root {
-    --primary-color: #4a148c; /* Purple */
-    --secondary-color: #fff;
-    --accent-color: #f3e5f5;
+    --primary-color: #4a148c;   /* Dark Purple */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #f3e5f5;    /* Light Purple Background */
+    --text-dark: #333333;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     background-color: var(--accent-color);
+    color: var(--text-dark);
 }
 
-/* Header */
+/* --- Header & Title --- */
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#logo {
-    color: var(--secondary-color);
-    text-decoration: none;
+h1 {
+    margin: 0;
     font-size: 1.5rem;
-    font-weight: bold;
+    color: var(--secondary-color);
 }
 
-/* Hamburger Button */
+#course-title {
+    font-weight: 100; /* Lighter font weight for contrast */
+}
+
+/* --- Hamburger Button --- */
 #menu {
     font-size: 2rem;
-    border: 0;
+    border: none;
     background: none;
     color: var(--secondary-color);
     cursor: pointer;
+    text-decoration: none;
 }
 
 #menu::before {
@@ -47,18 +51,14 @@ header {
     content: "✖";
 }
 
-/* Navigation - Mobile (Hidden by default) */
+/* --- Navigation (Mobile: Hidden by default) --- */
 nav {
     display: none;
     background-color: #333;
     width: 100%;
-    position: absolute;
-    top: 70px; /* Pushes menu below header */
-    left: 0;
-    z-index: 1000; /* Ensures it sits on top of images */
 }
 
-/* This class is toggled by JS to show the menu */
+/* JavaScript toggles this class to show menu */
 nav.open {
     display: block;
 }
@@ -80,52 +80,68 @@ nav.open {
 
 .navigation li a:hover {
     background-color: #555;
+    text-decoration: underline;
 }
 
-/* Main Content */
+/* --- Main Content --- */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
     text-align: center;
+    
+    /* THE FIX: This overrides base.css to fix your layout */
+    display: block; 
 }
 
-h1 {
+main h2 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* Gallery Grid - Mobile (1 Column) */
+/* --- Gallery Grid (Mobile: 1 Column) --- */
 .gallery {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr; 
+    gap: 20px;
 }
 
-/* Card Styling */
+/* --- Card Design --- */
+section.card {
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+section.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
 figure {
     margin: 0;
-    background-color: white;
-    padding: 0.5rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 4px;
 }
 
-/* THE FIX: Forces all images to be exactly the same size */
-figure img {
+/* Images: Object-fit ensures all images are exact same size */
+section.card img {
     width: 100%;
-    height: 250px;       /* Fixed height for uniformity */
-    object-fit: cover;   /* Crops image to fit the box cleanly */
+    height: 250px;
+    object-fit: cover;
     border-radius: 4px;
 }
 
 figcaption {
-    padding-top: 0.5rem;
+    padding-top: 10px;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -133,4 +149,8 @@ footer {
     padding: 1.5rem;
     margin-top: 2rem;
     border-top: 4px solid #333;
+}
+
+footer p {
+    margin: 0.5rem 0;
 }

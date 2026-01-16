@@ -1,29 +1,39 @@
-/* Hide Hamburger Button */
+/* 1. Hide Hamburger Button */
 #menu {
     display: none;
 }
 
-/* Reset Nav Positioning */
-nav {
-    position: static;
-    display: block; /* Always show menu on desktop */
-    width: auto;
-    background-color: transparent;
+/* 2. Reset Header Layout */
+.header-content {
+    /* Keeps the title on the left */
 }
 
-/* Make List Horizontal */
+/* 3. Horizontal Navigation */
+nav {
+    display: block;      /* Always show menu */
+    background: none;    /* Remove dark background */
+    margin-top: 1rem;    /* Space from title */
+}
+
 .navigation {
-    display: flex;
-    flex-direction: row;
+    display: flex;       /* Horizontal layout */
+    justify-content: flex-end; /* Align to right */
+    gap: 10px;
 }
 
 .navigation li a {
-    color: white;
-    padding: 1rem 1.5rem;
+    color: white; /* Matches header background */
+    padding: 0.5rem 1rem;
+    border: none;
 }
 
-/* Gallery Grid - 3 Columns for Desktop */
+.navigation li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* 4. Gallery Grid (3 Columns) */
 .gallery {
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+    gap: 2rem;
 }

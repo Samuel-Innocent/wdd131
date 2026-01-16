@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Album - WDD 131</title>
-    <meta name="description" content="Temple Album page for WDD 131">
+    <title>WDD 131 - Dynamic Web Fundamentals - Temple Album</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. This page displays a gallery of temple images for the Temple Album project, demonstrating responsive grid layout.">
     <meta name="author" content="Samuel Emeka Innocent">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/temples.css">
     <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 700px)">
     
+    <script src="scripts/getdates.js" defer></script>
     <script src="scripts/temples.js" defer></script>
 </head>
 <body>
     <header>
-        <a href="#" id="logo">Temple Album</a>
-        <a id="menu" href="#"></a> <nav>
+        <div class="header-content">
+            <h1><span id="course-title">WDD 131 Dynamic Web Fundamentals</span> - Temple Album</h1>
+            <a id="menu" href="#"></a>
+        </div>
+        <nav>
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Old</a></li>
@@ -31,49 +36,84 @@
     </header>
 
     <main>
-        <h1>Home</h1>
+        <h2>Home</h2>
         <div class="gallery">
-            <figure>
-                <img src="images\salt_lake_city_temple.webp" alt="Salt Lake City Temple">
-                <figcaption>Salt Lake City Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images\alberta_canada_temple.jpg" alt="Alberta Canada Temple">
-                <figcaption>Alberta Canada Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/bern_switzerland_temple.jpg" alt="Bern Switzerland Temple">
-                <figcaption>Bern Switzerland Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/california_temple.jpg" alt="California Temple">
-                <figcaption>California Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/london_england_temple.jpg" alt="London England Temple">
-                <figcaption>London England Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/portland_oregon_temple.jpg" alt="Portland Oregon Temple">
-                <figcaption>Portland Oregon Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/rexburg_idaho_temple.webp" alt="Rexburg Idaho Temple">
-                <figcaption>Rexburg Idaho Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/tijuana_temple.jpg" alt="Tijuana Temple">
-                <figcaption>Tijuana Temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/washington_dc_temple.jpg" alt="Washington DC Temple">
-                <figcaption>Washington DC Temple</figcaption>
-            </figure>
+            <section class="card">
+                <h3>Salt Lake Temple</h3>
+                <figure>
+                    <img src="images/salt-lake-temple.webp" alt="Salt Lake City Temple">
+                    <figcaption>Utah, USA</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>Alberta Temple</h3>
+                <figure>
+                    <img src="images/alberta-temple.jpg" alt="Alberta Canada Temple">
+                    <figcaption>Alberta, Canada</figcaption>
+                </figure>
+            </section>
+            
+            <section class="card">
+                <h3>Bern Temple</h3>
+                <figure>
+                    <img src="images/bern-temple.jpg" alt="Bern Switzerland Temple">
+                    <figcaption>Bern, Switzerland</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>California Temple</h3>
+                <figure>
+                    <img src="images/california-temple.jpg" alt="California Temple">
+                    <figcaption>California, USA</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>London Temple</h3>
+                <figure>
+                    <img src="images/london-temple.jpg" alt="London England Temple">
+                    <figcaption>London, UK</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>Portland Temple</h3>
+                <figure>
+                    <img src="images/portland-temple.jpg" alt="Portland Oregon Temple">
+                    <figcaption>Oregon, USA</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>Rexburg Temple</h3>
+                <figure>
+                    <img src="images/rexburg-temple.webp" alt="Rexburg Idaho Temple">
+                    <figcaption>Idaho, USA</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>Tijuana Temple</h3>
+                <figure>
+                    <img src="images/tijuana-temple.jpg" alt="Tijuana Temple">
+                    <figcaption>Tijuana, Mexico</figcaption>
+                </figure>
+            </section>
+
+            <section class="card">
+                <h3>Washington DC Temple</h3>
+                <figure>
+                    <img src="images/washington-temple.jpg" alt="Washington DC Temple">
+                    <figcaption>Washington D.C., USA</figcaption>
+                </figure>
+            </section>
         </div>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Samuel Emeka Innocent| Lagos Nigeria</p>
+        <p>&copy; <span id="currentyear"></span> | Samuel Emeka Innocent | Lagos Nigeria</p>
         <p id="lastModified"></p>
     </footer>
 </body>
