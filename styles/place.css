@@ -1,16 +1,23 @@
 :root {
-    --primary-color: #008751; /* Nigeria Green */
+    --primary-color: #006039; 
     --secondary-color: #fff;
     --accent-color: #333;
     --font-family: 'Roboto', sans-serif;
 }
 
+/* Page Specific Overrides */
+h1 {
+    color: var(--primary-color);
+    padding: 1rem 0;
+    text-align: center; /* Center the title */
+}
+
+/* --- Mobile Layout (Default) --- */
 body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    text-align: center;
 }
 
 header {
@@ -26,6 +33,8 @@ header {
 nav {
     display: flex;
     gap: 15px;
+    flex-direction: column; /* Stack links on mobile */
+    align-items: center;
 }
 
 nav a {
@@ -40,7 +49,6 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* --- Mobile Layout (Default) --- */
 main {
     padding: 1rem;
     display: flex;
@@ -55,7 +63,6 @@ picture img {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Renamed to .card for Audit */
 .card {
     background: white;
     padding: 1.5rem;
@@ -65,13 +72,19 @@ picture img {
     text-align: left;
 }
 
+.card h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    background: none; /* Fix: Remove any potential background from base.css */
+}
+
 ul {
     list-style: none;
     padding: 0;
     line-height: 1.8;
 }
 
-/* Mobile Weather Icon (SVG) */
 .weather-icon {
     width: 50px;
     height: auto;
@@ -83,26 +96,43 @@ footer {
     color: var(--secondary-color);
     padding: 1rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 /* --- Desktop Layout (Media Query) --- */
 @media (min-width: 768px) {
+    /* FIX 1: Make the header horizontal on desktop */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    nav {
+        flex-direction: row; /* Links side-by-side */
+    }
+
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
+        /* FIX 2: Create explicit rows (Title Row + Content Row) */
+        grid-template-rows: auto 1fr; 
         gap: 20px;
-        position: relative;
         max-width: 1000px;
         margin: 0 auto;
         padding-top: 2rem;
     }
 
-    /* Hero Image Spans all columns and sits behind */
+    /* FIX 3: Place the Title (h1) in the first row, spanning all columns */
+    h1 {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+
+    /* FIX 4: Move Hero and Cards to the SECOND row */
     .hero {
         grid-column: 1 / 4;
-        grid-row: 1 / 3;
-        z-index: 0;
+        grid-row: 2 / 3; /* Sits in row 2 */
     }
     
     .hero img {
@@ -111,31 +141,25 @@ footer {
         object-fit: cover;
     }
 
-    /* Cards sit on top */
     .card {
         z-index: 1;
         margin: 2rem;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
+        grid-row: 2 / 3; /* Overlaps the hero in row 2 */
     }
     
-    /* Specific positioning for Data Card */
     .card:nth-of-type(1) {
         grid-column: 1 / 2;
-        grid-row: 1 / 2;
     }
 
-    /* Specific positioning for Weather Card */
     .card:nth-of-type(2) {
         grid-column: 3 / 4;
-        grid-row: 1 / 2;
     }
 
-    /* Hide the SVG icon on desktop */
     .weather-icon {
         display: none;
     }
 
-    /* REQUIRED: Pseudo-element for Desktop Weather Icon */
     .card:nth-of-type(2) h2::after {
         content: " ⛅";
         font-size: 1.5rem;

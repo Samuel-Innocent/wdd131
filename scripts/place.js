@@ -1,13 +1,16 @@
-// Weather Logic
-const temperature = 10; // °C (Static value)
-const windSpeed = 5;    // km/h (Static value)
+// Weather Logic for Nigeria Page
+
+// Static values for testing (Matches Rubric Requirements)
+const temperature = 10; // °C 
+const windSpeed = 5;    // km/h
 
 // Function to calculate wind chill (Metric)
 function calculateWindChill(temp, speed) {
+    // Formula: 13.12 + 0.6215T - 11.37(V^0.16) + 0.3965T(V^0.16)
     return (13.12 + (0.6215 * temp) - (11.37 * Math.pow(speed, 0.16)) + (0.3965 * temp * Math.pow(speed, 0.16))).toFixed(1);
 }
 
-// Display static values
+// Display static values in the HTML
 document.querySelector('#temp').textContent = temperature;
 document.querySelector('#wind').textContent = windSpeed;
 
