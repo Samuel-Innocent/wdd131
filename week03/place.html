@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nigeria - Country Profile</title>
-    <meta name="description" content="WDD 131 - Country Profile Page for Nigeria.">
+    <title>WDD 131 - Dynamic Web Fundamentals - Samuel Emeka Innocent</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. Country Profile Page for Nigeria. Explore the culture, weather, and demographics of this African nation.">
     <meta name="author" content="Samuel Emeka Innocent">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/place.css">
+    
+    <script src="../scripts/getdates.js" defer></script>
     <script src="../scripts/place.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Nigeria</h1>
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">W01</a>
+            <a href="#">W02</a>
+            <a href="#">W03</a>
+        </nav>
     </header>
 
     <main>
+        <h1>Nigeria</h1>
+        
         <div class="hero">
             <picture>
                 <source srcset="../images/nigeria-large.webp" media="(min-width: 1000px)">
@@ -22,7 +38,7 @@
             </picture>
         </div>
 
-        <section class="data-card">
+        <section class="card">
             <h2>Data</h2>
             <ul>
                 <li><strong>Area:</strong> 923,768 sq km</li>
@@ -36,9 +52,9 @@
             </ul>
         </section>
 
-        <section class="weather-card">
+        <section class="card">
             <h2>Weather</h2>
-            <img src="images/weather.svg" alt="Weather Icon" class="weather-icon">
+            <img src="../images/weather.svg" alt="Weather Icon" class="weather-icon">
             
             <ul>
                 <li><strong>Temperature:</strong> <span id="temp"></span>°C</li>
