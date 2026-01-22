@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria - Country Profile</title>
+    <meta name="description" content="WDD 131 - Country Profile Page for Nigeria.">
+    <meta name="author" content="Samuel Emeka Innocent">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/nigeria-large.webp" media="(min-width: 1000px)">
+                <img src="images/nigeria-small.webp" alt="Landscape of Nigeria" width="400" height="200">
+            </picture>
+        </div>
+
+        <section class="data-card">
+            <h2>Data</h2>
+            <ul>
+                <li><strong>Area:</strong> 923,768 sq km</li>
+                <li><strong>Population:</strong> 218 Million</li>
+                <li><strong>Capital:</strong> Abuja</li>
+                <li><strong>Languages:</strong> English, Hausa, Yoruba, Igbo</li>
+                <li><strong>Currency:</strong> Naira (₦)</li>
+                <li><strong>Time Zone:</strong> WAT (UTC+1)</li>
+                <li><strong>Calling Code:</strong> +234</li>
+                <li><strong>Internet TLD:</strong> .ng</li>
+            </ul>
+        </section>
+
+        <section class="weather-card">
+            <h2>Weather</h2>
+            <img src="images/weather.svg" alt="Weather Icon" class="weather-icon">
+            
+            <ul>
+                <li><strong>Temperature:</strong> <span id="temp"></span>°C</li>
+                <li><strong>Conditions:</strong> Sunny</li>
+                <li><strong>Wind:</strong> <span id="wind"></span> km/h</li>
+                <li><strong>Wind Chill:</strong> <span id="chill"></span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="currentyear"></span> | Samuel Emeka Innocent | Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
