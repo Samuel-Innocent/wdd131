@@ -1,18 +1,11 @@
 :root {
-    --primary-color: #006039; 
+    --primary-color: #004d2c; /* Dark Green */
     --secondary-color: #fff;
     --accent-color: #333;
     --font-family: 'Roboto', sans-serif;
 }
 
-/* Page Specific Overrides */
-h1 {
-    color: var(--primary-color);
-    padding: 1rem 0;
-    text-align: center; /* Center the title */
-}
-
-/* --- Mobile Layout (Default) --- */
+/* --- GLOBAL STYLES --- */
 body {
     font-family: var(--font-family);
     margin: 0;
@@ -20,35 +13,44 @@ body {
     background-color: #f4f4f4;
 }
 
+/* HEADER (Mobile First - Vertical) */
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* Stacked vertically on mobile */
+    align-items: center;    /* Centered */
+    gap: 1rem;
 }
 
+#course-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* NAV (Mobile First - Vertical) */
 nav {
     display: flex;
+    flex-direction: column; /* Stacked vertically on mobile */
     gap: 15px;
-    flex-direction: column; /* Stack links on mobile */
-    align-items: center;
+    text-align: center;
 }
 
 nav a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: var(--accent-color);
-    padding: 5px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
+/* MAIN CONTENT */
 main {
     padding: 1rem;
     display: flex;
@@ -56,83 +58,99 @@ main {
     gap: 1rem;
 }
 
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0;
+}
+
+/* IMAGES */
 picture img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    display: block;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* CARDS */
 .card {
     background: white;
-    padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: left;
+    overflow: hidden; /* Keeps header inside corners */
 }
 
+/* Card Header (Green Bar with White Text) */
 .card h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    background: none; /* Fix: Remove any potential background from base.css */
+    background-color: var(--primary-color);
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
 }
 
-ul {
+/* Card List */
+.card ul {
     list-style: none;
-    padding: 0;
+    padding: 1.5rem;
+    margin: 0;
     line-height: 1.8;
 }
 
-.weather-icon {
-    width: 50px;
-    height: auto;
-    float: right;
-}
-
+/* Footer */
 footer {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: white;
+    text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    text-align: center;
 }
 
-/* --- Desktop Layout (Media Query) --- */
-@media (min-width: 768px) {
-    /* FIX 1: Make the header horizontal on desktop */
+/* Weather Icon (Mobile Only) */
+.weather-icon {
+    display: block;
+    margin: 10px auto;
+    width: 64px;
+    height: auto;
+}
+
+/* --- DESKTOP VIEW (Triggers when screen is wider than 650px) --- */
+@media (min-width: 650px) {
+    
+    /* 1. Header & Nav become Horizontal */
     header {
-        flex-direction: row;
+        flex-direction: row; /* Side-by-side */
         justify-content: space-between;
         padding: 1rem 2rem;
     }
 
     nav {
-        flex-direction: row; /* Links side-by-side */
+        flex-direction: row; /* Side-by-side */
+        gap: 20px;
     }
 
+    /* 2. Grid Layout */
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        /* FIX 2: Create explicit rows (Title Row + Content Row) */
-        grid-template-rows: auto 1fr; 
         gap: 20px;
         max-width: 1000px;
         margin: 0 auto;
         padding-top: 2rem;
     }
 
-    /* FIX 3: Place the Title (h1) in the first row, spanning all columns */
+    /* 3. Positioning Elements */
     h1 {
         grid-column: 1 / 4;
         grid-row: 1 / 2;
     }
-
-    /* FIX 4: Move Hero and Cards to the SECOND row */
-    .hero {
-        grid-column: 1 / 4;
-        grid-row: 2 / 3; /* Sits in row 2 */
+    
+    .hero { 
+        grid-column: 1 / 4; 
+        grid-row: 2 / 3; 
     }
     
     .hero img {
@@ -141,27 +159,31 @@ footer {
         object-fit: cover;
     }
 
+    /* 4. Overlay Cards */
     .card {
         z-index: 1;
-        margin: 2rem;
-        background-color: rgba(255, 255, 255, 0.95);
-        grid-row: 2 / 3; /* Overlaps the hero in row 2 */
+        grid-row: 2 / 3; /* Sits on top of the image */
+        margin: 2rem 0;
+        background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    }
+
+    .card:nth-of-type(1) { 
+        grid-column: 1 / 2; 
+        margin-left: 2rem;
     }
     
-    .card:nth-of-type(1) {
-        grid-column: 1 / 2;
+    .card:nth-of-type(2) { 
+        grid-column: 3 / 4; 
+        margin-right: 2rem;
     }
 
-    .card:nth-of-type(2) {
-        grid-column: 3 / 4;
+    /* 5. Icon Fixes */
+    .weather-icon { 
+        display: none; 
     }
-
-    .weather-icon {
-        display: none;
-    }
-
-    .card:nth-of-type(2) h2::after {
-        content: " ⛅";
-        font-size: 1.5rem;
+    
+    .card:nth-of-type(2) h2::after { 
+        content: " ⛅"; 
+        color: white; 
     }
 }
