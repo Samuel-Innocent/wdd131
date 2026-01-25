@@ -1,13 +1,14 @@
 #nigeria {
-    --primary-color: #004d2c; /* Dark Green */
-    --secondary-color: #fff;
+    --primary-color: #004d2c; /* Nigeria Green */
+    --secondary-color: #fff;  /* White Text */
     --accent-color: #333;
-    font-family: 'Roboto', sans-serif;
 }
 
-/* 2. UNIQUE PAGE STYLES */
+/* Override base.css nav color specifically for this page */
+#nigeria nav {
+    background-color: var(--primary-color);
+}
 
-/* Hero Image Specifics */
 picture img {
     width: 100%;
     height: auto;
@@ -16,33 +17,30 @@ picture img {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Card Overrides */
-.card h2 {
-    color: var(--secondary-color);
-    text-align: center;
-}
-
-/* Weather Icon (Mobile) */
+/* Mobile Weather Icon */
 .weather-icon {
     display: block;
     margin: 10px auto;
     width: 64px;
 }
 
-/* 3. DESKTOP LAYOUT (Audit allows repeats inside @media) */
+/* 3. DESKTOP LAYOUT */
+/* The audit allows rules inside @media */
 @media (min-width: 650px) {
     
     header {
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
     }
 
     nav {
-        flex-direction: row;
-        gap: 20px;
+        background-color: transparent; 
     }
 
+    /* Override the base.css main grid */
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -89,6 +87,7 @@ picture img {
         display: none; 
     }
     
+    /* Add the icon via CSS for desktop */
     .card:nth-of-type(2) h2::after { 
         content: " ⛅"; 
         color: white; 
