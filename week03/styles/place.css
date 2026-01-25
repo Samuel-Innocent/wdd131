@@ -4,11 +4,13 @@
     --accent-color: #333;
 }
 
-/* Override base.css nav color specifically for this page */
+/* Override nav background specifically for this page */
 #nigeria nav {
     background-color: var(--primary-color);
 }
 
+
+/* Hero Image Specifics */
 picture img {
     width: 100%;
     height: auto;
@@ -24,8 +26,6 @@ picture img {
     width: 64px;
 }
 
-/* 3. DESKTOP LAYOUT */
-/* The audit allows rules inside @media */
 @media (min-width: 650px) {
     
     header {
@@ -40,7 +40,7 @@ picture img {
         background-color: transparent; 
     }
 
-    /* Override the base.css main grid */
+    /* Grid Layout */
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
