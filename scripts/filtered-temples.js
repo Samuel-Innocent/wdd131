@@ -65,14 +65,19 @@ const temples = [
     },
   ];
 
-// 2. Select DOM Elements
-const mainHeading = document.querySelector("h2");
-const templeContainer = document.querySelector("#res-grid");
+// 2. Select the MAIN element directly
+const mainElement = document.querySelector("main");
 
-// 3. Function to render cards
-function createTempleCard(filteredTemples) {
-    templeContainer.innerHTML = ""; 
+// 3. Function to render cards AND the title
+function createTempleCard(filteredTemples, titleText = "Home") {
+    mainElement.innerHTML = ""; // Clear everything
     
+    // Add the Title back in
+    let title = document.createElement("h2");
+    title.textContent = titleText;
+    mainElement.appendChild(title);
+    
+    // Add the Cards
     filteredTemples.forEach(temple => {
         let card = document.createElement("section");
         card.classList.add("card");
@@ -98,35 +103,30 @@ function createTempleCard(filteredTemples) {
         card.appendChild(area);
         card.appendChild(img);
 
-        templeContainer.appendChild(card);
+        mainElement.appendChild(card);
     });
 }
 
 // 4. Event Listeners
 document.querySelector("#home").addEventListener("click", () => {
-    mainHeading.textContent = "Home";
-    createTempleCard(temples);
+    createTempleCard(temples, "Home");
 });
 
 document.querySelector("#old").addEventListener("click", () => {
-    mainHeading.textContent = "Old Temples";
-    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) < 1900));
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) < 1900), "Old Temples");
 });
 
 document.querySelector("#new").addEventListener("click", () => {
-    mainHeading.textContent = "New Temples";
-    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) > 2000));
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) > 2000), "New Temples");
 });
 
 document.querySelector("#large").addEventListener("click", () => {
-    mainHeading.textContent = "Large Temples";
-    createTempleCard(temples.filter(temple => temple.area > 90000));
+    createTempleCard(temples.filter(temple => temple.area > 90000), "Large Temples");
 });
 
 document.querySelector("#small").addEventListener("click", () => {
-    mainHeading.textContent = "Small Temples";
-    createTempleCard(temples.filter(temple => temple.area < 10000));
+    createTempleCard(temples.filter(temple => temple.area < 10000), "Small Temples");
 });
 
 // 5. Initial Load
-createTempleCard(temples);
+createTempleCard(temples, "Home");
