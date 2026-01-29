@@ -65,7 +65,6 @@ const temples = [
     },
   ];
 
-// 2. Select the MAIN element directly
 const mainElement = document.querySelector("main");
 
 // 3. Function to render cards AND the title
