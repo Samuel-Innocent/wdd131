@@ -49,7 +49,7 @@ const temples = [
       area: 116642,
       imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // --- 3 NEW TEMPLES ADDED BELOW ---
+    
     {
       templeName: "Salt Lake",
       location: "Salt Lake City, Utah, United States",
@@ -73,7 +73,7 @@ const navLinks = document.querySelectorAll("nav a");
 
 // 3. Function to render cards
 function createTempleCard(filteredTemples) {
-    templeContainer.innerHTML = ""; // Clear existing cards
+    templeContainer.innerHTML = ""; 
     
     filteredTemples.forEach(temple => {
         let card = document.createElement("section");
@@ -92,7 +92,7 @@ function createTempleCard(filteredTemples) {
         
         img.setAttribute("src", temple.imageUrl);
         img.setAttribute("alt", `${temple.templeName} Temple`);
-        img.setAttribute("loading", "lazy"); // Lazy loading required
+        img.setAttribute("loading", "lazy"); 
 
         card.appendChild(name);
         card.appendChild(location);
@@ -133,7 +133,3 @@ document.querySelector("#small").addEventListener("click", () => {
 // 5. Initial Load
 createTempleCard(temples);
 
-// 6. Footer Data
-const currentYear = new Date().getFullYear();
-document.querySelector("#currentyear").textContent = currentYear;
-document.querySelector("#lastModified").textContent = "Last Modification: " + document.lastModified;
