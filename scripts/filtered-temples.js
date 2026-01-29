@@ -69,7 +69,6 @@ const temples = [
 // 2. DOM Elements
 const mainHeading = document.querySelector("h2");
 const templeContainer = document.querySelector("#res-grid");
-const navLinks = document.querySelectorAll("nav a");
 
 // 3. Function to render cards
 function createTempleCard(filteredTemples) {
@@ -77,7 +76,9 @@ function createTempleCard(filteredTemples) {
     
     filteredTemples.forEach(temple => {
         let card = document.createElement("section");
-        card.classList.add("temple-card");
+        
+        
+        card.classList.add("card");
         
         let name = document.createElement("h3");
         let location = document.createElement("p");
@@ -92,7 +93,7 @@ function createTempleCard(filteredTemples) {
         
         img.setAttribute("src", temple.imageUrl);
         img.setAttribute("alt", `${temple.templeName} Temple`);
-        img.setAttribute("loading", "lazy"); 
+        img.setAttribute("loading", "lazy");
 
         card.appendChild(name);
         card.appendChild(location);
@@ -132,4 +133,3 @@ document.querySelector("#small").addEventListener("click", () => {
 
 // 5. Initial Load
 createTempleCard(temples);
-
