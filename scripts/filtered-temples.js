@@ -1,4 +1,3 @@
-// 1. Temple Data Array
 const temples = [
     {
       templeName: "Aba Nigeria",
@@ -63,20 +62,27 @@ const temples = [
       area: 40000,
       imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/2019/400x250/5-Rome-Temple-2160345.jpg"
     },
+    {
+      templeName: "Johannesburg South Africa",
+      location: "Johannesburg, South Africa",
+      dedicated: "1985, August, 24",
+      area: 19184,
+      imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/johannesburg-south-africa/400x250/johannesburg-south-africa-temple-lds-83166-wallpaper.jpg"
+    }
   ];
 
+// 2. DOM Elements
 const mainElement = document.querySelector("main");
 
-// 3. Function to render cards AND the title
+// 3. Function to render cards
 function createTempleCard(filteredTemples, titleText = "Home") {
-    mainElement.innerHTML = ""; // Clear everything
+    mainElement.innerHTML = ""; 
     
-    // Add the Title back in
+    
     let title = document.createElement("h2");
     title.textContent = titleText;
     mainElement.appendChild(title);
-    
-    // Add the Cards
+
     filteredTemples.forEach(temple => {
         let card = document.createElement("section");
         card.classList.add("card");

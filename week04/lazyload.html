@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Lazy Load Example</title>
+    <meta name="description" content="A demonstration of native lazy loading images.">
+    <meta name="author" content="Samuel Emeka Innocent">
+    <link rel="stylesheet" href="styles/lazyload.css">
+    <script src="scripts/lazyload.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Lazy Loading Demonstration</h1>
+    </header>
+
+    <main>
+        <img src="images/alberta-temple.jpg" alt="image 1" loading="lazy" width="400" height="600">
+        <img src="images/bern-temple.jpg" alt="image 2" loading="lazy" width="400" height="600">
+        <img src="images/california-temple.jpg" alt="image 3" loading="lazy" width="400" height="600">
+        <img src="images/london-temple.jpg" alt="image 4" loading="lazy" width="400" height="600">
+        <img src="images/nigeria-large.webp" alt="image 5" loading="lazy" width="400" height="600">
+        <img src="images/nigeria-large.webp" alt="image 6" loading="lazy" width="400" height="600">
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> | Samuel Emeka Innocent | Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

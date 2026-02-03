@@ -1,0 +1,44 @@
+/* Basic Page Reset */
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin: 2rem 0;
+    color: #333;
+}
+
+/* Image Styling */
+img {
+    display: block;        
+    margin: 0 auto;       
+    margin-bottom: 2rem;   
+    width: 400px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    /* The Fade Animation */
+    animation: fade 3s ease-in-out;
+}
+
+/* Define the Fade Animation */
+@keyframes fade {
+    0% {
+        opacity: 0;
+        background-color: black; /* Simulates fade from black */
+    }
+    100% {
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
