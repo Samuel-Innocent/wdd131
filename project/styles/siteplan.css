@@ -1,0 +1,121 @@
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    /* Professional Data Science Palette */
+    --primary-color: #102A43;   /* Midnight Blue */
+    --secondary-color: #27AE60; /* Emerald Green */
+    --accent-color: #F0F4F8;    /* Light Gray/White */
+    --text-color: #333333;
+    
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    margin: 0;
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+header h1, header h2 {
+    color: white;
+    margin: 0.5rem 0;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 2rem 0;
+}
+
+/* Color Schema Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+td {
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: bold;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.accent {
+    background-color: var(--accent-color);
+    color: #333;
+}
+
+/* Typography Samples */
+.heading-font {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.body-font {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+}
+
+/* Wireframe Layout */
+.wireframe-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wf-col {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #333;
+}
+
+.logo {
+    width: 100px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+}

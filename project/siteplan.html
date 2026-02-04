@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Site Plan - Samuel Emeka Innocent</title>
+    <meta name="description" content="Site plan for my professional Data Science and Web Development portfolio.">
+    <meta name="author" content="Samuel Emeka Innocent">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Sam Tech Logo" class="logo"> 
+        <h1>Project Site Plan</h1>
+        <h2>Samuel Emeka Innocent</h2>
+        <h2>WDD 131</h2>
+    </header>
+
+    <main>
+        <hr>
+        
+        <section>
+            <h3>Site Name</h3>
+            <p><strong>Samuel Innocent - Data & Dev Portfolio</strong></p>
+            <p>
+                I chose this name because it is my personal professional brand. As a Data Scientist and Web Developer, my name is the "product." 
+                It clearly tells recruiters exactly who I am and what I do immediately upon landing on the page.
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Site Purpose</h3>
+            <p>
+                This website will serve as a professional portfolio to showcase my technical skills and specific data projects.
+                The site will be divided into three main sections:
+            </p>
+            <ul>
+                <li><strong>About Me:</strong> A professional biography highlighting my background in Nigeria and my dual focus on Data Science and Dynamic Web Fundamentals.</li>
+                <li><strong>Project Showcase:</strong> A detailed display of my key projects, specifically the "Telco Customer Churn & CLV Predictor" app and my Python-based "Energy Analysis" project.</li>
+                <li><strong>Contact:</strong> A functional area for potential employers to connect with me, including links to my LinkedIn and GitHub.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Scenarios</h3>
+            <p>Questions my target audience (Recruiters & Employers) might ask:</p>
+            <ul>
+                <li>"I see Samuel lists 'Data Science' on his resume; where can I see code examples of his Python Energy Analysis?"</li>
+                <li>"Does Samuel have any experience combining data backend logic with a frontend web interface?"</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="colors">
+            <h3>Color Schema</h3>
+            <p>
+                I selected a professional, high-contrast palette. "Midnight Blue" conveys authority and intelligence (common in tech/data), 
+                while "Emerald Green" provides a fresh accent representing growth and energy (tying into my Energy Analysis project).
+            </p>
+            
+            <table>
+                <tr>
+                    <td class="primary">#102A43<br>Primary<br>(Midnight Blue)</td>
+                    <td class="secondary">#27AE60<br>Secondary<br>(Emerald Green)</td>
+                    <td class="accent">#F0F4F8<br>Accent/Background<br>(Light Gray)</td>
+                </tr>
+            </table>
+            
+            <ul>
+                <li><strong>Primary (#102A43):</strong> Used for the navbar, footer, and main headings.</li>
+                <li><strong>Secondary (#27AE60):</strong> Used for "Call to Action" buttons (e.g., "View Project") and links.</li>
+                <li><strong>Accent (#F0F4F8):</strong> Used for the page background to ensure text is easy to read.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Typography</h3>
+            
+            <h4>Headings: Montserrat</h4>
+            <p class="heading-font">
+                "Telco Customer Churn Predictor"
+            </p>
+            <p>Used for H1-H3. It is a bold, modern geometric font that looks great for project titles.</p>
+
+            <h4>Body Text: Open Sans</h4>
+            <p class="body-font">
+                "My name is Samuel Innocent, and I analyze data to solve real-world problems."
+            </p>
+            <p>Used for all paragraph text. It is clean, neutral, and very easy to read on screens.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Wireframes</h3>
+            
+            <div class="wireframe-grid">
+                <div class="wf-col">
+                    <h4>Mobile View</h4>
+                    <img src="https://placehold.co/400x800/f0f0f0/333?text=Header%0A(Logo+|+Menu)%0A%0AHero+Section%0A(Photo)%0A(Bio+Text)%0A%0AProjects%0A[Telco+App]%0A[Energy+Analysis]%0A%0AContact" alt="Mobile Wireframe Sketch showing layout">
+                </div>
+                <div class="wf-col">
+                    <h4>Desktop View</h4>
+                    <img src="https://placehold.co/1000x600/f0f0f0/333?text=Header+(Logo+|+About+|+Projects+|+Contact)%0A%0AHero+Section%0A(Bio+Text+Left)....................(Photo+Right)%0A%0AProjects+Grid%0A[Telco+App].......[Energy+Analysis]%0A%0AFooter" alt="Desktop Wireframe Sketch showing layout">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Samuel Emeka Innocent | Nigeria</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
