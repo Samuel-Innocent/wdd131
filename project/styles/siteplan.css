@@ -1,17 +1,12 @@
 :root {
     --primary-color: #102A43;   
-    --secondary-color: #1E8449; /* Darker Green to pass Contrast Audit */
+    --secondary-color: #1E8449; /* Darker Green for Contrast */
     --accent-color: #F0F4F8;    
     --text-color: #333333;
     
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
-
-/* Explicit rules required by audit */
-header { padding: 1rem; background-color: var(--primary-color); color: white; }
-main { max-width: 960px; margin: 0 auto; padding: 1rem; }
-footer { text-align: center; padding: 1rem; background-color: var(--primary-color); color: white; }
 
 body {
     font-family: var(--body-font);
@@ -21,9 +16,29 @@ body {
     margin: 0;
 }
 
-/* Navigation Styles */
+/* --- STRUCTURAL RULES (Required by Audit) --- */
+header {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- NAVIGATION (Required by Audit: Flexbox) --- */
 nav {
-    display: flex; /* Flexbox required by Audit */
+    display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 1rem;
@@ -35,12 +50,13 @@ nav a {
     font-weight: bold;
 }
 
-/* Audit Requirement: Hover Effect */
+/* --- HOVER EFFECT (Required by Audit) --- */
 nav a:hover {
     text-decoration: underline;
     color: #4ADE80; /* Light green on hover */
 }
 
+/* --- TYPOGRAPHY --- */
 h1, h2, h3, h4 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -60,14 +76,14 @@ h1, h2, h3, h4 {
     margin: 10px auto;
 }
 
-/* Audit Requirement: Display Grid */
+/* --- WIREFRAMES (Required by Audit: Grid) --- */
 .wireframe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* Card Styles (Required by Audit) */
+/* --- CARD SECTIONS (Required by Audit) --- */
 .card {
     background: white;
     padding: 1.5rem;
@@ -77,7 +93,7 @@ h1, h2, h3, h4 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Color Table */
+/* --- COLOR TABLE --- */
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
 td { padding: 2rem; text-align: center; color: white; font-weight: bold; border: 1px solid #ccc; }
 
@@ -85,9 +101,9 @@ td { padding: 2rem; text-align: center; color: white; font-weight: bold; border:
 .secondary { background-color: var(--secondary-color); }
 .accent { background-color: var(--accent-color); color: #333; }
 
-/* Fonts */
+/* --- FONT SAMPLES --- */
 .heading-font { font-family: var(--heading-font); font-size: 1.5rem; color: var(--primary-color); }
 .body-font { font-family: var(--body-font); font-size: 1.1rem; }
 
-/* Images */
+/* --- IMAGES --- */
 img { max-width: 100%; border: 1px solid #333; }
