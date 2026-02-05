@@ -82,7 +82,7 @@ legend {
 
 .star-rating label {
     font-size: 2rem;
-    color: #ccc;
+    color: #595959; /* Darker gray to pass contrast check */
     cursor: pointer;
     margin: 0;
     padding: 0 0.2rem;
