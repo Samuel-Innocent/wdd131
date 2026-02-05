@@ -4,24 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Confirmation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/form.css">
+    
     <script src="scripts/review.js" defer></script>
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Product Review</h1>
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="form.html">Form</a>
+            <a href="review.html">Review</a>
+            <a href="#">Site Plan</a>
+        </nav>
     </header>
+
     <main>
-        <div class="review-confirmation">
+        <h1>Product Review</h1>
+        
+        <section class="review-confirmation card">
             <h2>Thank you!</h2>
             <p>Your review has been successfully recorded.</p>
-            <p>You have completed <span id="reviewCount">0</span> reviews.</p>
-            <a href="form.html" class="back-btn">Return to Form</a>
-        </div>
+            
+            <p>You have completed <strong><span id="reviewCount">0</span></strong> reviews.</p>
+            
+            <a href="form.html" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center; margin-top: 1rem;">Return to Form</a>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Your Name | <span id="lastModified"></span></p>
+        <p>&copy; <span id="currentyear"></span> | Samuel Emeka Innocent | Nigeria</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>

@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review | WDD 131</title>
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. A form to submit product reviews with ratings, features, and comments.">
+    <meta name="description" content="Product Review Form for WDD 131">
     <meta name="author" content="Samuel Emeka Innocent">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/form.css">
+    
     <script src="scripts/form.js" defer></script>
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Product Review</h1>
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="form.html">Form</a>
+            <a href="review.html">Review</a>
+            <a href="temples.html">Temple Album</a>
+        </nav>
     </header>
+
     <main>
-        <div class="form-container">
+        <h1>Product Review</h1>
+        
+        <section class="card">
+            <h2>Instructions</h2>
+            <p>Please fill out the form below to provide feedback on your recent purchase. Your input helps us improve our products.</p>
+        </section>
+
+        <section class="card">
             <form method="get" action="review.html">
                 
                 <div class="form-item">
                     <label for="product">Product Name <span class="required">*</span></label>
                     <select id="product" name="productName" required>
                         <option value="" disabled selected>Select a Product ...</option>
-                        </select>
+                    </select>
                 </div>
 
                 <fieldset class="form-item">
@@ -63,10 +85,12 @@
 
                 <input type="submit" value="Post Review" class="submit-btn">
             </form>
-        </div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Your Name | <span id="lastModified"></span></p>
+        <p>&copy; <span id="currentyear"></span> | Samuel Emeka Innocent | Nigeria</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>
