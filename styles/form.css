@@ -1,21 +1,29 @@
-main {
+.form-main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Force Single Column */
     gap: 20px;
-    max-width: 800px; /* Limits width for readability */
+    max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Audit Requirement: Section class "card" styling */
+/* 2. CARD OVERRIDES */
 .card {
-    background-color: #ffffff; /* Use hex instead of var if var is not in base.css */
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Form Elements */
+/* 3. NAVIGATION OVERRIDES */
+nav a {
+    display: inline-block;
+    padding: 1rem; 
+}
+
+/* Center the nav bar content */
+nav {
+    text-align: center;
+}
+
+/* 4. FORM SPECIFIC ELEMENTS */
 .form-item {
     margin-bottom: 1.5rem;
     display: flex;
@@ -25,7 +33,7 @@ main {
 label {
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #005f73; /* Primary Color */
+    color: #005f73;
 }
 
 input[type="text"],
@@ -40,12 +48,10 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Required Indicator */
 .required {
     color: #ae2012;
 }
 
-/* Fieldsets */
 fieldset {
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -58,7 +64,6 @@ legend {
     padding: 0 0.5rem;
 }
 
-/* Checkbox Group */
 .checkbox-group label {
     display: block;
     font-weight: normal;
@@ -66,7 +71,7 @@ legend {
     color: #333;
 }
 
-/* Star Rating System */
+/* 5. STAR RATING SYSTEM */
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -77,7 +82,6 @@ legend {
     display: none;
 }
 
-/* Star styling */
 .star-rating label {
     font-size: 2rem;
     color: #ccc;
@@ -86,16 +90,15 @@ legend {
     padding: 0 0.2rem;
 }
 
-/* Hover and Checked states */
 .star-rating label:hover,
 .star-rating label:hover ~ label,
 .star-rating input:checked ~ label {
-    color: #ee9b00; /* Accent Color */
+    color: #ee9b00;
 }
 
-/* Buttons */
+/* 6. BUTTONS */
 .submit-btn {
-    background-color: #0a9396; /* Secondary Color */
+    background-color: #0a9396;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -108,17 +111,4 @@ legend {
 
 .submit-btn:hover {
     background-color: #005f73;
-}
-
-/* This forces the nav links to sit next to each other */
-nav a {
-    display: inline-block;
-    padding: 1rem;
-    text-decoration: none;
-    color: white; /* Ensure text is visible */
-}
-
-/* Optional: Center the whole nav bar if it isn't already */
-nav {
-    text-align: center;
 }
