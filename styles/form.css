@@ -1,29 +1,27 @@
 .form-main {
     display: grid;
-    grid-template-columns: 1fr; /* Force Single Column */
+    grid-template-columns: 1fr;
     gap: 20px;
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* 2. CARD OVERRIDES */
-.card {
+.form-card {
     padding: 2rem;
+    
 }
 
-/* 3. NAVIGATION OVERRIDES */
-nav a {
+.navbar a {
     display: inline-block;
     padding: 1rem; 
 }
 
-/* Center the nav bar content */
-nav {
+.navbar {
     text-align: center;
 }
 
-/* 4. FORM SPECIFIC ELEMENTS */
+/* 4. FORM ELEMENTS */
 .form-item {
     margin-bottom: 1.5rem;
     display: flex;
