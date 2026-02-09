@@ -3,44 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>References | Samuel Innocent</title>
-    <meta name="description" content="References and citations for resources used on the portfolio website of Samuel Innocent.">
+    <title>References - Samuel Innocent</title>
+    <meta name="description" content="References for Samuel Innocent's portfolio.">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <main class="section-pad" style="max-width: 800px; margin: 0 auto;">
-        <h1>References & Citations</h1>
-        <p>Below is a list of external resources, assets, and inspirations used in the creation of this portfolio website, in accordance with project requirements.</p>
-
-        <article class="reference-entry">
-            <h3>Images</h3>
-            <ul>
-                <li><strong>Personal Photos:</strong> All photos of myself (`samuel.jpg`, `profile.jpg`) are personal property.</li>
-                <li><strong>Project Thumbnails:</strong> Project placeholder images created using Canva / Screenshots taken from my personal Streamlit applications.</li>
-            </ul>
-        </article>
-
-        <article class="reference-entry">
-            <h3>Fonts & Icons</h3>
-            <ul>
-                <li><strong>Typography:</strong> 'Montserrat' (headings) and 'Open Sans' (body text) served via <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.</li>
-                <li><strong>Theme Icon:</strong> Dark/Light mode toggle emoji used natively from system fonts.</li>
-            </ul>
-        </article>
-
-        <article class="reference-entry">
-            <h3>Code & Libraries</h3>
-            <ul>
-                <li><strong>CSS Reset:</strong> A basic modern CSS reset was applied based on common industry practices.</li>
-                <li><strong>Data Science Projects:</strong> The Weather and Energy analysis projects were built using Python, the Pandas library for data manipulation, and the Streamlit framework for web deployment.</li>
-            </ul>
-        </article>
-
-        <a href="index.html" class="btn btn-secondary" style="margin-top: 2rem; display: inline-block;">Back to Home</a>
+    <header>
+        <span id="course-title" style="display:none;">WDD 131</span>
+        <a href="index.html" class="logo-link"><img src="images/logo.svg" alt="Logo" class="logo-img" width="60" height="60"></a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+        <button id="theme-toggle">🌓</button>
+    </header>
+    <main class="card" style="max-width:800px; margin:2rem auto;">
+        <h1>References</h1>
+        <ul>
+            <li><strong>Fonts:</strong> Google Fonts (Montserrat, Open Sans)</li>
+            <li><strong>Icons:</strong> Local SVG Logo</li>
+            <li><strong>Images:</strong> Personal photography and project screenshots.</li>
+        </ul>
+        <a href="index.html" class="btn btn-secondary">Back Home</a>
     </main>
-
     <footer>
-        <p>&copy; 2026 Samuel Emeka Innocent | Nigeria</p>
+        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>

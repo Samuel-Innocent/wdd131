@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Innocent | Data Science & Web Dev Portfolio</title>
-    <meta name="description" content="Welcome to the professional portfolio of Samuel Innocent. Discover my dual expertise in Data Science (Python, Machine Learning) and Dynamic Web Development (HTML, CSS, JS). Available for hire.">
+    <title>WDD 131 - Dynamic Web Fundamentals - Samuel Innocent</title>
+    <meta name="description" content="Samuel Innocent's Portfolio: Data Science (Python) and Web Development (HTML/CSS) projects and skills showcase.">
+    <meta name="author" content="Samuel Emeka Innocent">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
+    
+    <script src="scripts/getdates.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
+        <span id="course-title" style="display:none;">WDD 131 - Dynamic Web Fundamentals</span>
+        
         <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img">
+            <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img" width="60" height="60">
         </a>
         <nav class="navbar">
             <a href="index.html" class="active">Home</a>
@@ -26,57 +34,48 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero card">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="highlight">Samuel Innocent</span></h1>
                 <h2>Data Scientist & Web Developer</h2>
-                <p>I bridge the gap between complex data analysis and dynamic, user-friendly web interfaces. Let's build something impactful together.</p>
+                <p>Bridging the gap between Data Science and Dynamic Web Development.</p>
                 <div class="hero-buttons">
                     <a href="projects.html" class="btn btn-primary">View My Work</a>
                     <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-image-container">
-                <img src="images/samuel.jpg" alt="Samuel Innocent standing professionally" class="hero-img" width="400" height="600">
+                 <img src="images/samuel.jpg" alt="Samuel Innocent" class="hero-img">
             </div>
         </section>
 
-        <section class="skills section-pad">
-            <h2 class="section-title">My Expertise</h2>
+        <section class="skills section-pad card">
+            <h2 class="section-title">My Skills</h2>
             <div class="skills-grid">
                 <article class="skill-card">
-                    <h3>Data Science</h3>
-                    <ul>
-                        <li>Python & Pandas</li>
-                        <li>Machine Learning</li>
-                        <li>Data Visualization (Streamlit)</li>
-                        <li>Statistical Analysis</li>
-                    </ul>
+                   <h3>Data Science</h3>
+                   <p>Python, Pandas, Machine Learning, Streamlit</p>
                 </article>
                 <article class="skill-card">
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>HTML5 & Semantic Markup</li>
-                        <li>CSS3, Flexbox & Grid</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>Responsive Design</li>
-                    </ul>
+                   <h3>Web Development</h3>
+                   <p>HTML5, CSS3, JavaScript, Responsive Design</p>
                 </article>
             </div>
         </section>
 
-        <section class="about-preview section-pad">
+        <section class="about-preview section-pad card">
             <div class="about-content">
                 <h2 class="section-title">About Me</h2>
-                <p>I am a dedicated student at BYU-Pathway Worldwide, passionate about creating accessible web solutions and deriving actionable insights from complex data sets. My unique combination of skills allows me to handle the full lifecycle of data-driven applications.</p>
+                <p>I am a student at BYU-Pathway Worldwide, passionate about building accessible web solutions and analyzing complex data.</p>
             </div>
-            <img src="images/profile.webp" alt="Close up profile of Samuel" loading="lazy" class="about-img" width="300" height="300">
+            <img src="images/profile.jpg" alt="Samuel Profile" class="about-img" loading="lazy">
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Samuel Emeka Innocent | Nigeria</p>
-        <p><a href="references.html">References & Citations</a></p>
+        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent | Nigeria</p>
+        <p id="lastModified"></p>
+        <p><a href="references.html">References</a></p>
     </footer>
 </body>
 </html>
