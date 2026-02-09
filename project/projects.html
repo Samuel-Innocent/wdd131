@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Showcase | Samuel Innocent Portfolio</title>
+    <meta name="description" content="Explore the portfolio of Samuel Innocent, featuring Data Science projects (Weather & Energy Analysis with Streamlit) and Dynamic Web Development work. View live apps and code.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </header>
+
+    <main class="section-pad">
+        <h1 class="section-title">My Work</h1>
+        <p style="text-align: center; margin-bottom: 1rem;">Filter projects by category:</p>
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+            <button class="filter-btn" onclick="filterProjects('data', this)">Data Science</button>
+            <button class="filter-btn" onclick="filterProjects('web', this)">Web Dev</button>
+        </div>
+
+        <div id="project-container" class="project-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Samuel Emeka Innocent | Nigeria</p>
+        <p><a href="references.html">References & Citations</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Innocent - Data & Dev Portfolio</title>
+    <meta name="description" content="Welcome to the professional portfolio of Samuel Innocent. Discover my dual expertise in Data Science (Python, Machine Learning) and Dynamic Web Development (HTML, CSS, JS). Available for hire.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img">
+        </a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Samuel Innocent</span></h1>
+                <h2>Data Scientist & Web Developer</h2>
+                <p>I bridge the gap between complex data analysis and dynamic, user-friendly web interfaces. Let's build something impactful together.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="images/samuel.jpg" alt="Samuel Innocent standing professionally" class="hero-img" width="400" height="600">
+            </div>
+        </section>
+
+        <section class="skills section-pad">
+            <h2 class="section-title">My Expertise</h2>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>Data Science</h3>
+                    <ul>
+                        <li>Python & Pandas</li>
+                        <li>Machine Learning</li>
+                        <li>Data Visualization (Streamlit)</li>
+                        <li>Statistical Analysis</li>
+                    </ul>
+                </article>
+                <article class="skill-card">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>HTML5 & Semantic Markup</li>
+                        <li>CSS3, Flexbox & Grid</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-preview section-pad">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <p>I am a dedicated student at BYU-Pathway Worldwide, passionate about creating accessible web solutions and deriving actionable insights from complex data sets. My unique combination of skills allows me to handle the full lifecycle of data-driven applications.</p>
+            </div>
+            <img src="images/profile.webp" alt="Close up profile of Samuel" loading="lazy" class="about-img" width="300" height="300">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Samuel Emeka Innocent | Nigeria</p>
+        <p><a href="references.html">References & Citations</a></p>
+    </footer>
+</body>
+</html>

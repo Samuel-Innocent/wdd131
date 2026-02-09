@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Samuel Innocent Portfolio</title>
+    <meta name="description" content="Get in touch with Samuel Innocent for data science collaborations, web development opportunities, or general inquiries. Use the contact form to send a message directly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </header>
+
+    <main class="section-pad">
+        <h1 class="section-title">Get In Touch</h1>
+        <div class="form-container-card">
+            <p>Have a project in mind or want to discuss a job opportunity? Fill out the form below.</p>
+            <form id="contactForm" method="get" action="thanks.html">
+                
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiryType">Inquiry Type</label>
+                    <select id="inquiryType" name="inquiryType">
+                        <option value="hire">Hiring / Job Offer</option>
+                        <option value="project">Freelance Project</option>
+                        <option value="general">General Question</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Samuel Emeka Innocent | Nigeria</p>
+        <p><a href="references.html">References & Citations</a></p>
+    </footer>
+</body>
+</html>
