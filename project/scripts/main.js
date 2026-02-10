@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // 3. Render Projects (Only runs if container exists)
+    // 3. Render Projects 
     const projectContainer = document.getElementById("project-container");
 
     if (projectContainer) {
@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
-                // UI: Remove active from all, add to clicked
+                
                 filterButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
-                // Logic: Get filter type from data-attribute
+                
                 const category = btn.getAttribute('data-filter');
                 renderProjects(category);
             });
