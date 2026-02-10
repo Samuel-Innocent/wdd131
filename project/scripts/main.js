@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "Machine learning application predicting customer attrition likelihood.",
+            description: "Machine learning application predicting customer attrition.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Product Review Form",
             type: "web",
-            description: "Responsive HTML form implementing local storage for submission tracking.",
+            description: "Responsive HTML form implementing local storage.",
             image: "images/form-thumb.jpg",
             siteLink: "contact.html" 
         }
@@ -54,8 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>`;
                 }
 
+                // Generates correct class 'project-card' for CSS styling
                 projectContainer.innerHTML += `
-                    <article class="project-card">
+                    <article class="project-card card">
                         <img src="${project.image}" alt="${project.name}" loading="lazy">
                         <div class="card-content">
                             <h3>${project.name}</h3>
@@ -78,11 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. Theme Toggle
+    // 4. Robust Theme Toggle
     const themeButton = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Load saved theme
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
         if(themeButton) themeButton.textContent = "☀️";

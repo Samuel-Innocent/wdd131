@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Samuel Innocent</title>
-    <meta name="description" content="Explore Samuel Innocent's Data Science and Web Development projects.">
-    <meta name="author" content="Samuel Emeka Innocent">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/getdates.js" defer></script>
@@ -16,9 +11,9 @@
 </head>
 <body class="project-body">
     <header class="project-header">
-        <span id="course-title" class="visually-hidden">WDD 131</span>
+        <span id="course-title" class="visually-hidden">WDD 131 - Dynamic Web Fundamentals</span>
         <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="Logo" class="logo-img" width="60" height="60">
+            <img src="images/logo.svg" alt="SI Logo" class="logo-img" width="60" height="60">
         </a>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -29,20 +24,21 @@
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
     </header>
 
-    <main class="project-main section-pad">
+    <main class="project-main">
         <h1 class="section-title">My Work</h1>
-        <p style="text-align: center; margin-bottom: 1rem;">Filter projects by category:</p>
+        
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="data">Data Science</button>
             <button class="filter-btn" data-filter="web">Web Dev</button>
         </div>
-        <div id="project-container" class="project-grid"></div>
+
+        <div id="project-container" class="grid"></div>
     </main>
 
     <footer class="project-footer">
-        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent | Nigeria</p>
-        <p><span id="lastModified"></span> | <a href="references.html">References</a></p>
+        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent</p>
+        <p><a href="references.html">References</a></p>
     </footer>
 </body>
 </html>
