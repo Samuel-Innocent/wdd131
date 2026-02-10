@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Samuel Innocent</title>
+    <meta name="description" content="Contact Samuel Innocent for opportunities.">
+    <meta name="author" content="Samuel Emeka Innocent">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/getdates.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
-<body>
-    <header>
+<body class="project-body">
+    <header class="project-header">
         <span id="course-title" class="visually-hidden">WDD 131 - Dynamic Web Fundamentals</span>
-        <a href="index.html"><img src="images/logo.svg" alt="SI Logo" class="logo-img"></a>
-        <nav>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="Logo" class="logo-img" width="60" height="60">
+        </a>
+        <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html" class="active">Contact</a>
@@ -22,29 +26,39 @@
         <button id="theme-toggle">🌓</button>
     </header>
 
-    <main>
+    <main class="project-main section-pad">
         <h1 class="section-title">Get In Touch</h1>
-        
-        <div class="form-container">
+        <section class="form-container-card card">
             <p>Have a project in mind? Fill out the form below.</p>
             <form id="contactForm" method="get" action="thanks.html">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
-
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="inquiryType">Inquiry Type</label>
+                    <select id="inquiryType" name="inquiryType">
+                        <option value="hire">Hiring / Job Offer</option>
+                        <option value="project">Freelance Project</option>
+                        <option value="general">General Question</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
             </form>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent</p>
-        <p><a href="references.html">References</a></p>
+    <footer class="project-footer">
+        <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent | Nigeria</p>
+        <p><span id="lastModified"></span> | <a href="references.html">References</a></p>
     </footer>
 </body>
 </html>
