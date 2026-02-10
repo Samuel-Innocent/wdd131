@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Footer Year
     const yearSpan = document.getElementById("year");
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // 2. Project Data
     const projects = [
         {
             name: "Weather Data Analysis",
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "Machine learning application predicting customer attrition.",
+            description: "Machine learning application predicting customer attrition likelihood.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // 3. Render Projects
     const projectContainer = document.getElementById("project-container");
 
     if (projectContainer) {
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>`;
                 }
 
-                // Generates correct class 'project-card' for CSS styling
                 projectContainer.innerHTML += `
                     <article class="project-card card">
                         <img src="${project.image}" alt="${project.name}" loading="lazy">
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. Robust Theme Toggle
     const themeButton = document.getElementById("theme-toggle");
     const body = document.body;
 
