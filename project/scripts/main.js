@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // 1. Footer Year
     const yearSpan = document.getElementById("year");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     // 2. Project Data
     const projects = [
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "A machine learning application that predicts customer attrition likelihood based on service usage.",
+            description: "Machine learning application predicting customer attrition.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"
@@ -27,23 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Product Review Form",
             type: "web",
-            description: "A responsive, accessible HTML form implementing local storage for submission tracking.",
+            description: "Responsive HTML form implementing local storage.",
             image: "images/form-thumb.jpg",
             siteLink: "contact.html" 
         }
     ];
 
-    // 3. Render Projects 
+    // 3. Render Projects
     const projectContainer = document.getElementById("project-container");
 
     if (projectContainer) {
         const renderProjects = (filter = "all") => {
             projectContainer.innerHTML = "";
-            
-            const filteredProjects = projects.filter(project => {
-                if (filter === "all") return true;
-                return project.type === filter;
-            });
+            const filteredProjects = projects.filter(project => filter === "all" || project.type === filter);
 
             filteredProjects.forEach(project => {
                 let linksHTML = '';
@@ -56,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     linksHTML = `
                         <div class="project-links">
-                            <a href="${project.siteLink}" class="btn btn-primary" style="flex-grow:1;">View Project</a>
+                            <a href="${project.siteLink}" class="btn btn-primary" style="width: 100%;">View Project</a>
                         </div>`;
                 }
 
-                const cardHTML = `
+                projectContainer.innerHTML += `
                     <article class="project-card">
-                        <img src="${project.image}" alt="Screenshot of ${project.name}" loading="lazy">
+                        <img src="${project.image}" alt="${project.name}" loading="lazy">
                         <div class="card-content">
                             <h3>${project.name}</h3>
                             <p>${project.description}</p>
@@ -70,24 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </article>
                 `;
-                projectContainer.innerHTML += cardHTML;
             });
         };
 
-        // Initial Render
         renderProjects();
 
-        // Attach Filter Click Events
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                
-                filterButtons.forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
-                
-                const category = btn.getAttribute('data-filter');
-                renderProjects(category);
+                renderProjects(btn.getAttribute('data-filter'));
             });
         });
     }
@@ -96,22 +82,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeButton = document.getElementById("theme-toggle");
     const body = document.body;
 
-    if (themeButton) {
-        const currentTheme = localStorage.getItem("theme");
-        if (currentTheme === "dark") {
-            body.classList.add("dark-mode");
-            themeButton.textContent = "☀️";
-        }
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        if(themeButton) themeButton.textContent = "☀️";
+    }
 
+    if (themeButton) {
         themeButton.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
-            if (body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-                themeButton.textContent = "☀️";
-            } else {
-                localStorage.setItem("theme", "light");
-                themeButton.textContent = "🌓";
-            }
+            const isDark = body.classList.contains("dark-mode");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            themeButton.textContent = isDark ? "☀️" : "🌓";
         });
     }
 });
