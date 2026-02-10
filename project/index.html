@@ -6,21 +6,17 @@
     <title>WDD 131 - Dynamic Web Fundamentals - Samuel Innocent</title>
     <meta name="description" content="Samuel Innocent's Portfolio: Data Science (Python) and Web Development (HTML/CSS) projects and skills showcase.">
     <meta name="author" content="Samuel Emeka Innocent">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
-    
     <script src="scripts/getdates.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
-        <span id="course-title" style="display:none;">WDD 131 - Dynamic Web Fundamentals</span>
-        
+        <span id="course-title" class="visually-hidden">WDD 131 - Dynamic Web Fundamentals</span>
         <a href="index.html" class="logo-link">
             <img src="images/logo.svg" alt="Samuel Innocent Logo" class="logo-img" width="60" height="60">
         </a>
@@ -66,7 +62,7 @@
         <section class="about-preview section-pad card">
             <div class="about-content">
                 <h2 class="section-title">About Me</h2>
-                <p>I am a student at BYU-Pathway Worldwide, passionate about building accessible web solutions and analyzing complex data.</p>
+                <p>I am a student at BYU-Pathway Worldwide, passionate about building accessible web solutions.</p>
             </div>
             <img src="images/profile.jpg" alt="Samuel Profile" class="about-img" loading="lazy">
         </section>
@@ -74,8 +70,7 @@
 
     <footer>
         <p>&copy; <span id="currentyear"></span> Samuel Emeka Innocent | Nigeria</p>
-        <p id="lastModified"></p>
-        <p><a href="references.html">References</a></p>
+        <p><span id="lastModified"></span> | <a href="references.html">References</a></p>
     </footer>
 </body>
 </html>
