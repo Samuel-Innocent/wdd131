@@ -10,13 +10,13 @@
     --border-color: #e0e0e0;
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Class (Only source of dark variables now) */
 body.dark-mode {
-    --primary: #64ffda;      /* Neon Mint (Text) */
-    --secondary: #64ffda;    /* Neon Mint (Borders) */
-    --bg-color: #0a192f;     /* Deep Navy */
-    --text-color: #ffffff;   /* White Text */
-    --card-bg: #112240;      /* Navy Cards */
+    --primary: #64ffda;      
+    --secondary: #64ffda;    
+    --bg-color: #0a192f;     
+    --text-color: #ffffff;   
+    --card-bg: #112240;      
     --border-color: #233554;
 }
 
@@ -41,9 +41,9 @@ img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
 /* ========================
-   2. HEADER 
+   2. HEADER & NAV
    ======================== */
-header {
+.project-header {
     background-color: #0F2942 !important; 
     padding: 1rem 5%;
     display: flex;
@@ -52,24 +52,31 @@ header {
     position: sticky; top: 0; z-index: 1000;
 }
 
-header h1, header a, header span { color: #ffffff !important; }
+/* NUCLEAR CONTRAST FIX: Forces Audit to see White */
+.project-header h1, 
+.project-header a, 
+.project-header span,
+#theme-toggle { 
+    color: #ffffff !important; 
+}
 
-nav { display: flex; gap: 20px; }
-nav a { padding: 5px 0; font-weight: 600; border-bottom: 2px solid transparent; }
+.navbar { display: flex; gap: 20px; }
+.navbar a { padding: 5px 0; font-weight: 600; border-bottom: 2px solid transparent; }
 
-nav a:hover, nav a.active {
+/* Active Link Contrast Fix */
+.navbar a:hover, .navbar a.active {
     color: #ffffff !important;
     border-bottom-color: #136033;
     background-color: #0F2942; 
 }
 
 .logo-img { width: 50px; }
-#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: white !important; }
+#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; margin-left: 20px; }
 
 /* ========================
    3. LAYOUT & CONTAINERS
    ======================== */
-main { 
+.project-main { 
     max-width: 1200px; 
     margin: 2rem auto; 
     padding: 0 1.5rem; 
@@ -86,18 +93,22 @@ main {
     margin-bottom: 3rem;
 }
 
-/* Text Color Enforcement */
+/* Force Text Color in Cards */
 .card p, .card li { color: var(--text-color); }
 
 /* ========================
-   4. HERO SECTION
+   4. HERO & UTILS
    ======================== */
+/* Replaces inline styles */
+.text-highlight { color: #136033; }
+.text-left { text-align: left; }
+
 .hero { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
 .hero-content { text-align: center; }
 .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
 
 .hero-img { 
-    border: 5px solid #136033; /* Green Border */
+    border: 5px solid #136033; 
     border-radius: 8px; 
     padding: 5px; 
     background: #fff;
@@ -124,19 +135,18 @@ main {
     cursor: pointer;
 }
 
-/* Primary Button */
 .btn-primary { background-color: #0F2942; color: #ffffff !important; }
 .btn-primary:hover { background-color: #136033; border-color: #136033; }
 
-/* Secondary Button */
 .btn-secondary { background-color: #ffffff; color: #0F2942 !important; }
 .btn-secondary:hover { background-color: #0F2942; color: #ffffff !important; }
 
+/* Dark Mode Overrides */
 body.dark-mode .btn-primary { background: #64ffda; color: #0a192f !important; border-color: #64ffda; }
 body.dark-mode .btn-secondary { background: transparent; color: #ffffff !important; border-color: #64ffda; }
 
 /* ========================
-   6. PROJECTS PAGE 
+   6. PROJECTS (Horizontal)
    ======================== */
 .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; width: 100%; }
 
@@ -151,18 +161,15 @@ body.dark-mode .btn-secondary { background: transparent; color: #ffffff !importa
 }
 .filter-btn.active { background-color: var(--primary); color: var(--bg-color); }
 
-/* GRID SYSTEM */
 #project-container {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile */
+    grid-template-columns: 1fr;
     gap: 30px;
     width: 100%;
 }
 
 @media (min-width: 900px) {
-    #project-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 Columns Desktop */
-    }
+    #project-container { grid-template-columns: repeat(3, 1fr); }
 }
 
 .project-card {
@@ -193,7 +200,7 @@ body.dark-mode .btn-secondary { background: transparent; color: #ffffff !importa
 .about-preview { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
 .about-img { 
     border-radius: 50%; 
-    border: 5px solid #136033; /* Green Circle */
+    border: 5px solid #136033; 
     padding: 5px; background: #fff;
     width: 250px; height: 250px; object-fit: cover;
 }
@@ -205,19 +212,18 @@ body.dark-mode .btn-secondary { background: transparent; color: #ffffff !importa
 }
 
 /* ========================
-   8. FOOTER 
+   8. FOOTER & FORMS
    ======================== */
-footer { background: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
-footer a { color: #ffffff !important; text-decoration: underline; }
+.project-footer { background: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
+.project-footer a { color: #ffffff !important; text-decoration: underline; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); color: #fff; background: #000; }
 
 @media (max-width: 768px) {
-    header { flex-direction: column; }
+    .project-header { flex-direction: column; }
     .navbar { flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
 }
 
-/* Form Styles */
 .form-container-card { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; }
 input, select, textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
 label { font-weight: bold; color: var(--primary); }

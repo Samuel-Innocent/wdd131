@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "Machine learning application predicting customer attrition.",
+            description: "Machine learning application predicting customer attrition likelihood.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Product Review Form",
             type: "web",
-            description: "Responsive HTML form implementing local storage.",
+            description: "Responsive HTML form implementing local storage for submission tracking.",
             image: "images/form-thumb.jpg",
             siteLink: "contact.html" 
         }
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeButton = document.getElementById("theme-toggle");
     const body = document.body;
 
+    // Load saved theme
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
         if(themeButton) themeButton.textContent = "☀️";
