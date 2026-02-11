@@ -1,0 +1,120 @@
+/* =========================
+   VARIABLES & RESET
+   ========================= */
+:root {
+  --primary-color: #1a3c5a;
+  --secondary-color: #2c567a;
+  --text-color: #333;
+  --white: #ffffff;
+  --bg-color: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* =========================
+   HEADER & NAVIGATION
+   ========================= */
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 0 0 0;
+  text-align: center;
+}
+
+#course-title {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+nav { background-color: #11283d; }
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav ul li { flex: 1; }
+
+nav a {
+  display: block;
+  padding: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+  color: #ffd700;
+}
+
+/* =========================
+   MAIN LAYOUT (GRID)
+   ========================= */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 20px;
+}
+
+main h1 {
+  text-align: center;
+  grid-column: 1 / -1;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  main { grid-template-columns: 2fr 1fr; }
+}
+
+/* =========================
+   CARD STYLING
+   ========================= */
+.card {
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card h2 {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.75rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+footer p { margin: 0.5rem 0; font-size: 0.9rem; }
+#lastModified { color: #ffd700; }

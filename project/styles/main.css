@@ -1,3 +1,6 @@
+/* ========================
+   VARIABLES
+   ======================== */
 :root {
     --primary: #0F2942;
     --secondary: #136033;
@@ -16,27 +19,29 @@ body.dark-mode {
     --border-color: #233554;
 }
 
-* { box-sizing: border-box; }
-
-.project-body {
+/* ========================
+   GLOBAL OVERRIDES
+   ======================== */
+body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0;
-    line-height: 1.6;
     transition: 0.3s;
-}
-
-h1, h2, h3 { 
-    font-family: 'Montserrat', sans-serif; 
-    color: var(--primary); 
-    margin: 0 0 1rem; 
 }
 
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
-.project-header {
+/* FIX: Override base.css grid layout */
+main { 
+    display: block !important; 
+    max-width: 1200px;
+}
+
+/* ========================
+   HEADER & NAV
+   ======================== */
+.portfolio-header {
     background-color: #0F2942 !important; 
     padding: 1rem 5%;
     display: flex;
@@ -45,61 +50,57 @@ a { text-decoration: none; color: inherit; }
     position: sticky; top: 0; z-index: 1000;
 }
 
-.project-header h1, 
-.project-header a, 
-#theme-toggle { 
+/* FIX: Force White Text on Links (Solves Contrast Error) */
+.portfolio-header a,
+.portfolio-nav a { 
     color: #ffffff !important; 
 }
 
+/* FIX: Constrain Giant Logo */
 .logo-img { width: 60px !important; height: auto !important; }
 
-.project-nav { display: flex; gap: 20px; background-color: transparent !important; }
+.portfolio-nav { 
+    display: flex; 
+    gap: 20px; 
+    background-color: transparent !important;
+}
 
-.project-nav a { 
+.portfolio-nav a { 
     padding: 5px 0; 
     font-weight: 600; 
     border-bottom: 2px solid transparent; 
-    color: #ffffff !important;
 }
 
-.project-nav a:hover, .project-nav a.active {
+/* Active State */
+.portfolio-nav a:hover, .portfolio-nav a.active {
     border-bottom-color: #136033;
     background-color: #0F2942 !important;
 }
 
-#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: white !important; }
 
-.project-main { 
-    max-width: 1200px; 
-    margin: 2rem auto; 
-    padding: 0 1.5rem; 
-    display: block !important; 
-}
-
-.section-title { text-align: center; margin: 3rem 0; font-size: 2rem; }
+/* ========================
+   CARDS & SECTIONS
+   ======================== */
+.section-title { text-align: center; margin: 3rem 0; font-size: 2rem; color: var(--primary); }
 .text-left { text-align: left; }
 
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
+/* FIX: Override base.css card styles */
 .card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
     padding: 2rem;
-    overflow: hidden;
     margin-bottom: 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.hero, .about-preview { display: flex; flex-direction: column; align-items: center; gap: 3rem; margin-bottom: 4rem; }
+.hero { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
 .hero-content { text-align: center; }
 .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
 
 .hero-img { border: 5px solid #136033; border-radius: 8px; background: #fff; max-width: 350px; }
+.about-preview { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .about-img { border-radius: 50%; border: 5px solid #136033; width: 250px; height: 250px; object-fit: cover; }
 
 @media (min-width: 900px) {
@@ -110,37 +111,72 @@ a { text-decoration: none; color: inherit; }
     .about-img { order: 2; margin-left: auto; }
 }
 
+/* ========================
+   BUTTONS
+   ======================== */
 .btn { 
     padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: bold; 
-    display: inline-block; text-align: center; border: 2px solid #0F2942; cursor: pointer;
+    display: inline-block; text-align: center; cursor: pointer;
 }
 
-.btn-primary { background-color: #0F2942 !important; color: #ffffff !important; }
-.btn-secondary { background-color: #ffffff !important; color: #0F2942 !important; }
+.btn-primary { 
+    background-color: #0F2942 !important; 
+    color: #ffffff !important; 
+    border: 2px solid #0F2942;
+}
 
-body.dark-mode .btn-primary { background-color: #64ffda !important; color: #0a192f !important; border-color: #64ffda; }
-body.dark-mode .btn-secondary { background-color: transparent !important; color: #ffffff !important; border-color: #64ffda; }
+/* FIX: Make Secondary Button Visible */
+.btn-secondary { 
+    background-color: #ffffff !important; 
+    color: #0F2942 !important; 
+    border: 2px solid #0F2942 !important;
+}
 
+body.dark-mode .btn-primary { 
+    background-color: #64ffda !important; 
+    color: #0a192f !important; 
+    border-color: #64ffda; 
+}
+
+body.dark-mode .btn-secondary { 
+    background-color: transparent !important; 
+    color: #ffffff !important; 
+    border-color: #64ffda !important;
+}
+
+/* ========================
+   PROJECTS
+   ======================== */
 .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
 .filter-btn { border-radius: 20px; background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.5rem 1.5rem; cursor: pointer; font-weight: bold; }
 .filter-btn.active { background: var(--primary); color: var(--bg-color); }
 
-.project-card { padding: 0; display: flex; flex-direction: column; background: var(--card-bg); }
-.project-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item { padding: 0 !important; display: flex; flex-direction: column; }
+/* FIX: Restrict Project Image Height */
+.project-item img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
 .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .project-links { margin-top: auto; display: flex; gap: 10px; }
 
-.project-footer { background-color: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
-.project-footer a { color: #ffffff !important; text-decoration: underline; }
+/* ========================
+   FOOTER
+   ======================== */
+.portfolio-footer { background-color: #0F2942 !important; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
+.portfolio-footer a { color: #ffffff !important; text-decoration: underline; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); color: #fff; background: #000; }
 
-.form-container { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; }
+.form-container { max-width: 600px; margin: 0 auto; }
 input, select, textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
 label { font-weight: bold; color: var(--primary); }
 .highlight { color: #136033; }
 
 @media (max-width: 768px) {
-    .project-header { flex-direction: column; }
-    .project-nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+    .portfolio-header { flex-direction: column; }
+    .portfolio-nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
 }

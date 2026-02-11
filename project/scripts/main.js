@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "Machine learning application predicting customer attrition likelihood.",
+            description: "Machine learning application predicting customer attrition.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 projectContainer.innerHTML += `
-                    <article class="project-card card">
+                    <article class="project-item card portfolio-card">
                         <img src="${project.image}" alt="${project.name}" loading="lazy">
                         <div class="card-content">
                             <h3>${project.name}</h3>
