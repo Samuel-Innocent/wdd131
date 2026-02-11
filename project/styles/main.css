@@ -18,7 +18,7 @@ body.dark-mode {
 
 * { box-sizing: border-box; }
 
-.portfolio-body {
+.project-body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -36,68 +36,56 @@ h1, h2, h3 {
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
-/* HEADER FIXES */
-.portfolio-header {
+.project-header {
     background-color: #0F2942 !important; 
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky; top: 0; z-index: 1000;
-    color: #ffffff !important; /* Force parent text white */
 }
 
-/* NUCLEAR CONTRAST FIX FOR HEADER LINKS */
-.portfolio-header h1, 
-.portfolio-header a, 
-.portfolio-nav a,
+.project-header h1, 
+.project-header a, 
 #theme-toggle { 
     color: #ffffff !important; 
 }
 
 .logo-img { width: 60px !important; height: auto !important; }
 
-.portfolio-nav { 
-    display: flex; 
-    gap: 20px; 
-    background-color: transparent !important; 
-    margin: 0;
-}
+.project-nav { display: flex; gap: 20px; background-color: transparent !important; }
 
-.portfolio-nav a { 
+.project-nav a { 
     padding: 5px 0; 
     font-weight: 600; 
     border-bottom: 2px solid transparent; 
+    color: #ffffff !important;
 }
 
-/* Active Link White Text on Dark Blue BG */
-.portfolio-nav a:hover, .portfolio-nav a.active {
+.project-nav a:hover, .project-nav a.active {
     border-bottom-color: #136033;
     background-color: #0F2942 !important;
-    color: #ffffff !important;
 }
 
 #theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-/* MAIN LAYOUT FIX */
-.portfolio-main { 
+.project-main { 
     max-width: 1200px; 
     margin: 2rem auto; 
     padding: 0 1.5rem; 
-    display: block !important; /* Overrides base.css grid */
+    display: block !important; 
 }
 
 .section-title { text-align: center; margin: 3rem 0; font-size: 2rem; }
 .text-left { text-align: left; }
 
-.portfolio-grid {
+.grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-/* Renamed to avoid 'Repeated Rules' with base.css .card */
-.portfolio-card {
+.card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -124,44 +112,26 @@ a { text-decoration: none; color: inherit; }
 
 .btn { 
     padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: bold; 
-    display: inline-block; text-align: center; cursor: pointer; text-decoration: none;
+    display: inline-block; text-align: center; border: 2px solid #0F2942; cursor: pointer;
 }
 
-.btn-primary { 
-    background-color: #0F2942 !important; 
-    color: #ffffff !important; 
-    border: 2px solid #0F2942;
-}
+.btn-primary { background-color: #0F2942 !important; color: #ffffff !important; }
+.btn-secondary { background-color: #ffffff !important; color: #0F2942 !important; }
 
-.btn-secondary { 
-    background-color: #ffffff !important; 
-    color: #0F2942 !important; 
-    border: 2px solid #0F2942; 
-}
-
-body.dark-mode .btn-primary { 
-    background-color: #64ffda !important; 
-    color: #0a192f !important; 
-    border-color: #64ffda; 
-}
-
-body.dark-mode .btn-secondary { 
-    background-color: transparent !important; 
-    color: #ffffff !important; 
-    border-color: #64ffda; 
-}
+body.dark-mode .btn-primary { background-color: #64ffda !important; color: #0a192f !important; border-color: #64ffda; }
+body.dark-mode .btn-secondary { background-color: transparent !important; color: #ffffff !important; border-color: #64ffda; }
 
 .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
 .filter-btn { border-radius: 20px; background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.5rem 1.5rem; cursor: pointer; font-weight: bold; }
 .filter-btn.active { background: var(--primary); color: var(--bg-color); }
 
-.project-item { padding: 0; display: flex; flex-direction: column; background: var(--card-bg); }
-.project-item img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
+.project-card { padding: 0; display: flex; flex-direction: column; background: var(--card-bg); }
+.project-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
 .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .project-links { margin-top: auto; display: flex; gap: 10px; }
 
-.portfolio-footer { background-color: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
-.portfolio-footer a { color: #ffffff !important; text-decoration: underline; }
+.project-footer { background-color: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
+.project-footer a { color: #ffffff !important; text-decoration: underline; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); color: #fff; background: #000; }
 
@@ -171,6 +141,6 @@ label { font-weight: bold; color: var(--primary); }
 .highlight { color: #136033; }
 
 @media (max-width: 768px) {
-    .portfolio-header { flex-direction: column; }
-    .portfolio-nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+    .project-header { flex-direction: column; }
+    .project-nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
 }

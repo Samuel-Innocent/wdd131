@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 projectContainer.innerHTML += `
-                    <article class="project-item card portfolio-card">
+                    <article class="project-card card">
                         <img src="${project.image}" alt="${project.name}" loading="lazy">
                         <div class="card-content">
                             <h3>${project.name}</h3>
