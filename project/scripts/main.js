@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Telco Customer Churn",
             type: "data",
-            description: "Machine learning application predicting customer attrition likelihood.",
+            description: "Machine learning application predicting customer attrition likelihood based on service usage.",
             image: "images/churn-thumb.jpg", 
             streamlitLink: "https://project2-churn-prediction-ps9y2knne9qtwtcwgzhy57.streamlit.app/",
             githubLink: "https://github.com/Samuel-Innocent/project2-churn-prediction"

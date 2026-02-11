@@ -1,12 +1,9 @@
-/* ========================
-   1. RESET & VARIABLES
-   ======================== */
 :root {
-    --primary: #0F2942;      /* Dark Blue */
-    --secondary: #136033;    /* Green */
-    --bg-color: #ffffff;     
-    --text-color: #333333;   
-    --card-bg: #F8F9FA;      
+    --primary: #0F2942;
+    --secondary: #136033;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #F8F9FA;
     --border-color: #e0e0e0;
 }
 
@@ -21,23 +18,20 @@ body.dark-mode {
 
 * { box-sizing: border-box; }
 
-body {
+.project-body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s;
 }
 
 h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 0 0 1rem; }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 
-/* ========================
-   2. HEADER & CONTRAST FIXES (THE PRIORITY)
-   ======================== */
-header {
+.project-header {
     background-color: #0F2942 !important; 
     padding: 1rem 5%;
     display: flex;
@@ -46,38 +40,39 @@ header {
     position: sticky; top: 0; z-index: 1000;
 }
 
-/* FIX: Force White Text on Header Links & Theme Toggle */
-header h1, 
-header a, 
-button#theme-toggle { 
+.project-header h1, 
+.project-header a, 
+#theme-toggle { 
     color: #ffffff !important; 
 }
 
-/* FIX: Logo Size */
 .logo-img { width: 60px !important; height: auto !important; }
 
-nav { display: flex; gap: 20px; }
-nav a { padding: 5px 0; font-weight: 600; border-bottom: 2px solid transparent; }
+.navbar { display: flex; gap: 20px; }
 
-/* FIX: ACTIVE LINK CONTRAST FAILURE (1.39:1) */
-/* Forces background Dark Blue and Text White */
-nav a:hover, 
-nav a.active {
-    background-color: #0F2942 !important;
+.navbar a { 
+    padding: 5px 0; 
+    font-weight: 600; 
+    border-bottom: 2px solid transparent; 
     color: #ffffff !important;
-    border-bottom: 2px solid #136033;
+}
+
+.navbar a:hover, .navbar a.active {
+    border-bottom-color: #136033;
+    background-color: #0F2942 !important;
 }
 
 #theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-/* ========================
-   3. LAYOUT & GRID
-   ======================== */
-main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: block; }
+.project-main { 
+    max-width: 1200px; 
+    margin: 2rem auto; 
+    padding: 0 1.5rem; 
+    display: block; 
+}
 
 .section-title { text-align: center; margin: 3rem 0; font-size: 2rem; }
 
-/* Project Grid - 3 Columns Horizontal */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -93,9 +88,6 @@ main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: block; 
     margin-bottom: 2rem;
 }
 
-/* ========================
-   4. SECTIONS & COMPONENTS
-   ======================== */
 .hero, .about-preview { display: flex; flex-direction: column; align-items: center; gap: 3rem; margin-bottom: 4rem; }
 .hero-content { text-align: center; }
 .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
@@ -103,7 +95,6 @@ main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: block; 
 .hero-img { border: 5px solid #136033; border-radius: 8px; background: #fff; max-width: 350px; }
 .about-img { border-radius: 50%; border: 5px solid #136033; width: 250px; height: 250px; object-fit: cover; }
 
-/* Desktop Layout */
 @media (min-width: 900px) {
     .hero, .about-preview { flex-direction: row; text-align: left; justify-content: space-between; }
     .hero-content, .about-content { flex: 1; padding-right: 2rem; }
@@ -112,36 +103,37 @@ main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: block; 
     .about-img { order: 2; margin-left: auto; }
 }
 
-.btn { padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: bold; display: inline-block; text-align: center; border: 2px solid #0F2942; cursor: pointer; }
-.btn-primary { background: #0F2942; color: #fff !important; }
-.btn-secondary { background: #fff; color: #0F2942 !important; }
+.btn { 
+    padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: bold; 
+    display: inline-block; text-align: center; border: 2px solid #0F2942; cursor: pointer;
+}
 
-/* Dark Mode Overrides */
-body.dark-mode .btn-primary { background: #64ffda; color: #0a192f !important; border-color: #64ffda; }
-body.dark-mode .btn-secondary { background: transparent; color: #fff !important; border-color: #64ffda; }
+.btn-primary { background-color: #0F2942 !important; color: #ffffff !important; }
+.btn-secondary { background-color: #ffffff !important; color: #0F2942 !important; }
+
+body.dark-mode .btn-primary { background-color: #64ffda !important; color: #0a192f !important; border-color: #64ffda; }
+body.dark-mode .btn-secondary { background-color: transparent !important; color: #ffffff !important; border-color: #64ffda; }
 
 .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
 .filter-btn { border-radius: 20px; background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.5rem 1.5rem; cursor: pointer; font-weight: bold; }
 .filter-btn.active { background: var(--primary); color: var(--bg-color); }
 
-.project-card { padding: 0; display: flex; flex-direction: column; }
+.project-card { padding: 0; display: flex; flex-direction: column; background: var(--card-bg); }
 .project-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
 .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .project-links { margin-top: auto; display: flex; gap: 10px; }
 
-/* ========================
-   5. FOOTER & UTILS
-   ======================== */
-footer { background: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
-footer a { color: #fff !important; text-decoration: underline; }
+.project-footer { background-color: #0F2942; color: #a8b2d1; text-align: center; padding: 2rem; margin-top: 4rem; }
+.project-footer a { color: #ffffff !important; text-decoration: underline; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); color: #fff; background: #000; }
 
 .form-container { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; }
 input, select, textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
 label { font-weight: bold; color: var(--primary); }
+.highlight { color: #136033; }
 
 @media (max-width: 768px) {
-    header { flex-direction: column; }
+    .project-header { flex-direction: column; }
     .navbar { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
 }
